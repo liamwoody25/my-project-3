@@ -1,0 +1,55 @@
+// Variables
+$base-font-size: 1rem;
+$heading-font-size: 1.5rem;
+$byline-font-size: 1.1rem;
+$small-font-size: 0.9rem;
+
+// Body
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(0.5rem, 0.5rem + 2vw, $base-font-size);
+}
+
+// Links
+a {
+    text-decoration: none;
+    color: black;
+}
+
+// Headings
+.intro__heading,
+.steps__heading,
+#container__heading {
+    font-size: $heading-font-size;
+}
+
+// Bylines
+.intro__byline,
+.resto-card__byline,
+.resto-card__heading {
+    font-size: $byline-font-size;
+}
+
+// Navigation and Buttons
+.intro__nav,
+.steps__links,
+.footer__nav,
+.btn {
+    font-size: $base-font-size;
+}
+
+// Media Content
+.resto-card__media-content {
+    font-size: $small-font-size;
+}
+
+// Steps
+.steps span {
+    font-size: $small-font-size;
+    font-weight: 300;
+}
+
+// Byline
+.resto-card__byline {
+    line-height: 1.5;
+}

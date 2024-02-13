@@ -1,0 +1,183 @@
+
+.background {
+    position: relative;
+    z-index: -1;
+    img {
+        height: 34vh;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+
+
+.menu {
+    background-color: $color-bckgrd;
+    border-radius: 40px 40px 0 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 4rem;
+    &__name {
+        max-width: 500px;
+        margin: auto;
+        font-family: 'Shrikhand', cursive;
+        font-size: 1.8em;
+        margin-top: -3rem;
+        margin-bottom: 1.5rem;
+        padding-top: 2rem;
+        padding-left: 0.5rem;
+        padding-right: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__form {
+        max-width: 500px;
+        margin: auto;
+        .btn {
+            width: 45%;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}
+
+
+.section {
+    $_num-dish: 5;
+    $_anim-dur: 2000ms;
+    $_anim-delay: calc($_anim-dur/$_num-dish);
+
+    margin-bottom: 2.5rem;
+    &__title {
+        text-transform: uppercase;
+        position: relative;
+        margin-bottom: 1.5rem;
+        padding-left: 0.5rem;
+        font-weight: 300;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -0.5rem;
+            width: 2rem;
+            height: .25rem;
+            background-color: $color-3;
+            transform-origin: left;
+            animation: section__accent 2000ms both;
+        }
+    }
+    &__dish {
+        animation: dish-appear $_anim-dur both;
+        @for $i from 1 through $_num-dish {
+            &--#{$i} {
+                animation-delay: $_anim-delay*$i;
+            }
+        }
+    }
+}
+
+@keyframes section__accent {
+    0% {
+        transform: scaleX(0);
+    }
+}
+@keyframes dish-appear {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+
+
+.dish {
+    background-color: $color-white;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 8px 20px -4px darken($color-bckgrd,15%);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    overflow: hidden;
+    cursor: pointer;
+    @include interaction-query (fine) {
+        &:hover {
+            box-shadow: 0 8px 20px -4px darken($color-bckgrd,25%);
+            .dish__tick {
+            
+                i {
+                    transform: rotate(0deg);
+                }
+            }
+            .dish__name {
+                width: (70%);
+            }
+            .dish__price {
+                // nothing
+            }
+        }
+    }
+   
+    &__select {
+        appearance: none;
+        
+        &:checked {
+            ~ .dish__name {
+                width: (70%);
+            }
+            ~ .dish__tick {
+                
+                i {
+                    transform: rotate(0);
+                }
+            }
+        }
+    }
+    &__name {
+        padding: 10px;
+        width: 85%;
+        flex: none;
+        transition: width 2s ease-out;
+        h3:hover, p {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        p {
+            font-weight: 300;
+        }
+    }
+    &__price {
+        padding-bottom: 10px;
+        text-align: center;
+        align-self: flex-end;
+        margin: 0 auto;
+        width: 15%;
+        flex: none;
+       
+    }
+    &__tick {
+        background-color: $color-3;
+        width: 15%;
+        flex: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+        i {
+            color: $color-white;
+            transform: rotate(-540deg);
+            transition: transform 2s ease-out;
+        }
+    }
+    position: relative;
+    label {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+}
