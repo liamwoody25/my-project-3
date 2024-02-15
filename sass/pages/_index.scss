@@ -66,6 +66,7 @@ input[type="search"]::-webkit-search-results-decoration {display: none;}
             padding-left: 0;
         }
     }
+    /****** this is part of the code is for the links **********/
     &__links {
         max-width: 450px;
         width: 100%;
@@ -112,7 +113,7 @@ input[type="search"]::-webkit-search-results-decoration {display: none;}
 }
 
 
-
+/******* this part of the code is the section for the cards  ******/
 .container {
     background-color: $color-bckgrd;
     padding: 3em 4vw;

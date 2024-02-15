@@ -4,6 +4,7 @@
     position: relative;
     font-size: 1.5rem;
     height: fit-content;
+    /******* i added this part of the code which is for the heart thats underneath ***********/
     &__bottom {
         opacity: 1;
         transition: opacity 1s;
@@ -16,6 +17,7 @@
             opacity: 1;
         } 
     }
+    /******** i added this part of the code which is when you hover over the heart it changes colour to linear gradient********/
     &__top {
         position: absolute;
         top: 0;
@@ -25,6 +27,7 @@
         opacity: 0;
         transition: opacity 2s;
     }
+    /******** this part of the code is heart ********/
     .far {
         display: block;
     }
