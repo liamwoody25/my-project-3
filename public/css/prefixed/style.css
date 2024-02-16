@@ -119,6 +119,9 @@ a {
   position: relative;
   font-size: 1.5rem;
   height: fit-content;
+  /******* i added this part of the code which is for the heart thats underneath ***********/
+  /******** i added this part of the code which is when you hover over the heart it changes colour to linear gradient********/
+  /******** this part of the code is heart ********/
 }
 .ResHeartMove__bottom {
   opacity: 1;
@@ -282,6 +285,7 @@ input[type=search]::-webkit-search-results-decoration {
 }
 .steps {
   padding: 3em 4vw 4em 4vw;
+  /****** this is part of the code is for the links **********/
 }
 .steps__heading {
   padding-bottom: 1.2rem;
@@ -351,6 +355,7 @@ input[type=search]::-webkit-search-results-decoration {
   }
 }
 
+/******* this part of the code is the section for the cards  ******/
 .container {
   background-color: #f6f6f6;
   padding: 3em 4vw;
@@ -506,12 +511,6 @@ input[type=search]::-webkit-search-results-decoration {
 @keyframes section__accent {
   0% {
     transform: scaleX(0);
-  }
-}
-@keyframes dish-appear {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
   }
 }
 .dish {
