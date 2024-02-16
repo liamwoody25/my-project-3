@@ -516,12 +516,6 @@ input[type=search]::-webkit-search-results-decoration {
     transform: scaleX(0);
   }
 }
-@keyframes dish-appear {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-}
 .dish {
   background-color: #fff;
   border-radius: 20px;
